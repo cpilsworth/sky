@@ -42,6 +42,16 @@ async function loadFonts() {
   }
 }
 
+function buildSearchBlock(main) {
+  const searchPara = main.querySelector('h1 + p');
+  searchPara.classList.add('searchPara');
+  const searchInput = document.createElement('input');
+  searchInput.setAttribute('type', 'search');
+  searchInput.setAttribute('placeholder', 'Start your search now');
+  searchInput.classList.add('search-input');
+  searchPara.insertAdjacentElement('afterbegin', searchInput); 
+}
+
 /**
  * Builds all synthetic blocks in a container element.
  * @param {Element} main The container element
@@ -49,11 +59,14 @@ async function loadFonts() {
 function buildAutoBlocks(main) {
   try {
     buildHeroBlock(main);
+    buildSearchBlock(main);
   } catch (error) {
     // eslint-disable-next-line no-console
     console.error('Auto Blocking failed', error);
   }
 }
+
+
 
 /**
  * Decorates the main element.

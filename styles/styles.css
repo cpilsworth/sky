@@ -31,8 +31,8 @@
 
   /* heading sizes */
   --heading-font-size-xxl: 48px;
-  --heading-font-size-xl: 40px;
-  --heading-font-size-l: 32px;
+  --heading-font-size-xl: 32px;
+  --heading-font-size-l: 30px;
   --heading-font-size-m: 24px;
   --heading-font-size-s: 20px;
   --heading-font-size-xs: 18px;
@@ -40,6 +40,8 @@
   /* nav height */
   --nav-height: 64px;
 }
+
+
 
 @font-face {
   font-family: roboto-fallback;
@@ -50,10 +52,10 @@
 
 @media (width >= 900px) {
   :root {
-    --heading-font-size-xxl: 60px;
-    --heading-font-size-xl: 48px;
-    --heading-font-size-l: 36px;
-    --heading-font-size-m: 30px;
+    --heading-font-size-xxl: 48px;
+    --heading-font-size-xl: 32px;
+    --heading-font-size-l: 30px;
+    --heading-font-size-m: 28px;
     --heading-font-size-s: 24px;
     --heading-font-size-xs: 22px;
   }
@@ -207,4 +209,83 @@ main .section {
 main .section.light,
 main .section.highlight {
   background-color: var(--light-color);
+}
+
+main .section.gradient {
+  color: var(--light-color);
+  background: linear-gradient(to right, rgb(6, 68, 161) 0%, rgb(134, 46, 129) 100%);
+}
+
+.section.centre {
+  text-align: center;
+  & p, h1, h2, h3, h4 {
+    text-align: center;
+  }
+}
+
+main .section.cardlinks div {
+  & ul {
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    padding-left: 0;
+    width: 100%;
+    justify-content: center;
+
+    & li:hover {
+      border: 1px solid rgb(0, 15, 245);
+    }
+
+    & li {
+      flex: 1 1 100%;
+      border: 1px solid rgb(230, 230, 230);
+      min-width: 135px;
+      max-width: 250px;
+      height: 32px;
+      padding: 16px;
+      transition: box-shadow 150ms linear 0s;
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 6px 15px 0px;
+
+      & a {
+        text-decoration: none;        
+      }
+
+      & .icon {
+        margin-right: 8px;
+        vertical-align: text-top;
+      }
+
+    }
+  }
+}
+
+
+.searchPara {
+  display: inline-flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--light-color);
+  padding: 6px 9px 6px 20px;
+  border-radius: 4px;
+  height: 60px;
+  width: 300px;
+
+
+  & input {
+    background-color: inherit;
+    border: none;
+    height: 60px;
+    line-height: 22px;
+    left: 0;
+    width: 100%;
+  }
+
+  & input:focus {
+    outline: none;
+  }
+
+  &.icon {
+    vertical-align: middle;
+  }
 }
